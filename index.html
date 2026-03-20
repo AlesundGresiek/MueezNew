@@ -2,199 +2,218 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eid Surprise 💖</title>
+
 <style>
 body{
-  margin:0;
-  font-family:sans-serif;
-  background:linear-gradient(135deg,#332d2f,#a64bf4);
-  color:white;
-  text-align:center;
-  overflow:hidden;
+margin:0;
+font-family:sans-serif;
+background:linear-gradient(135deg,#332d2f,#a64bf4);
+color:white;
+text-align:center;
+overflow-x:hidden;
 }
+
 /* Password Screen */
 #lock{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:black;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  z-index:10;
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:10;
 }
+
 input{
-  padding:10px;
-  border-radius:20px;
-  border:none;
-  margin:10px;
+padding:10px;
+border-radius:20px;
+border:none;
+margin:10px;
 }
+
 button{
-  padding:12px 20px;
-  border:none;
-  border-radius:25px;
-  cursor:pointer;
+padding:12px 20px;
+border:none;
+border-radius:25px;
+cursor:pointer;
 }
-/* Love Buttons */
+
+/* Love Section */
 #loveSection{
-  display:none;
-  margin-top:100px;
-  position:relative;
-  height:200px;
+display:none;
+margin-top:100px;
+position:relative;
+height:200px;
 }
+
 #noBtn{
-  position:absolute;
+position:absolute;
 }
-/* Main Content */
+
+/* Main */
 #main{
-  display:none;
+display:none;
+padding:10px;
 }
+
 h1{
-  font-size:2.2em;
-  margin-top:30px;
+font-size:1.8em;
+margin-top:20px;
 }
+
 #text{
-  font-size:1.2em;
-  margin:20px;
-  line-height:1.5;
+font-size:1.1em;
+margin:15px;
+line-height:1.5;
 }
-/* Gallery */
+
+/* MOBILE GALLERY */
 .gallery{
-  display: flex;
-  gap: 10px;
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow-x: auto;
-  overflow-y: hidden;
+display:flex;
+gap:10px;
+padding:10px;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
 }
+
 .gallery img{
-  height: 150px;
-  object-fit: cover;
-  border-radius: 15px;
-  opacity: 0;
-  transform: translateY(50px) scale(0.9);
-  transition: all 0.8s ease;
+flex:0 0 80%;
+height:200px;
+object-fit:cover;
+border-radius:15px;
+opacity:0;
+transform:translateY(40px) scale(0.9);
+transition:all 0.8s ease;
+scroll-snap-align:center;
 }
+
 /* Hearts */
 .heart{
-  position:fixed;
-  font-size:24px;
-  animation:float 4s linear infinite;
+position:fixed;
+font-size:20px;
+animation:float 4s linear infinite;
 }
+
 @keyframes float{
-  0%{transform:translateY(100vh) scale(1);}
-  50%{transform:translateY(50vh) scale(1.2);}
-  100%{transform:translateY(-10vh) scale(1);}
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
 }
 </style>
 </head>
+
 <body>
+
 <!-- PASSWORD -->
 <div id="lock">
-  <h2>Enter Password 🔐</h2>
-  <input type="password" id="pass">
-  <button onclick="check()">Open 💌</button>
+<h2>Enter Password 🔐</h2>
+<input type="password" id="pass">
+<button onclick="check()">Open 💌</button>
 </div>
 
 <!-- LOVE BUTTONS -->
 <div id="loveSection">
-  <h2>Do you love me? 😏</h2>
-  <button onclick="yesClick()">❤️ Yes</button>
-  <button id="noBtn" onmouseover="moveNo()">❌ No</button>
+<h2>Do you love me? 😏</h2>
+<button onclick="yesClick()">❤️ Yes</button>
+<button id="noBtn" onmouseover="moveNo()">❌ No</button>
 </div>
 
 <!-- MAIN -->
 <div id="main">
-  <h1>Eid Mubarak Areeba 💖</h1>
-  <p id="text"></p>
-  <div class="gallery">
-    <img src="https://lh3.googleusercontent.com/d/1Yuu6C2OKaKzsFpnMkxri_6Y8UgcNvfNz">
-    <img src="https://lh3.googleusercontent.com/d/1LgcoCHP5UBRd4yK9q6vW9bcfhHh5-fEc">
-    <img src="https://lh3.googleusercontent.com/d/1hW-I3qAiun4uq4NX1qSEowYRMcC_SiC3">
-    <img src="https://lh3.googleusercontent.com/d/1mJi4QepZu3yf-AfW1gpcZ_L83GRhZS3Q">
-  </div>
+<h1>Eid Mubarak Areeba 💖</h1>
+<p id="text"></p>
+
+<div class="gallery">
+<img src="https://lh3.googleusercontent.com/d/1Yuu6C2OKaKzsFpnMkxri_6Y8UgcNvfNz">
+<img src="https://lh3.googleusercontent.com/d/1LgcoCHP5UBRd4yK9q6vW9bcfhHh5-fEc">
+<img src="https://lh3.googleusercontent.com/d/1hW-I3qAiun4uq4NX1qSEowYRMcC_SiC3">
+<img src="https://lh3.googleusercontent.com/d/1mJi4QepZu3yf-AfW1gpcZ_L83GRhZS3Q">
+</div>
+
 </div>
 
 <script>
-// PASSWORD CHECK
+// PASSWORD
 function check(){
-  let p=document.getElementById("pass").value;
-  if(p==="areeba"){
-    document.getElementById("lock").style.display="none";
-    document.getElementById("loveSection").style.display="block";
-  }else{
-    alert("Wrong password");
-  }
+let p=document.getElementById("pass").value;
+if(p==="areeba"){
+document.getElementById("lock").style.display="none";
+document.getElementById("loveSection").style.display="block";
+}else{
+alert("Wrong password");
+}
 }
 
-// LOVE BUTTONS
+// YES CLICK
 function yesClick(){
-  document.getElementById("loveSection").style.display="none";
-  document.getElementById("main").style.display="block";
-  typeText();
-  showImages();
-  hearts();
+document.getElementById("loveSection").style.display="none";
+document.getElementById("main").style.display="block";
+typeText();
+showImages();
+hearts();
 }
 
+// MOVE NO BUTTON
 function moveNo(){
-  let b=document.getElementById("noBtn");
-  b.style.left=Math.random()*70+"%";
-  b.style.top=Math.random()*150+"px";
+let b=document.getElementById("noBtn");
+b.style.left=Math.random()*70+"%";
+b.style.top=Math.random()*150+"px";
 }
 
-// TYPING MESSAGES
+// TEXT ANIMATION
 let messages = [
-  "🌙 May Allah bless our love endlessly...",
-  "💖 You are my world, my heart, my everything...",
-  "🌸 I can't wait to spend forever with you...",
-  "✨ Eid Mubarak, my love!",
-  "I Love You So Much 💖"
+"🌙 May Allah bless our love endlessly...",
+"💖 You are my world, my heart, my everything...",
+"🌸 I can't wait to spend forever with you...",
+"✨ Eid Mubarak, my love!",
+"💍 Will you marry me? 💖"
 ];
+
 let msgIndex = 0;
 let charIndex = 0;
 
 function typeText(){
-  if(msgIndex < messages.length){
-    let msg = messages[msgIndex];
-    if(charIndex < msg.length){
-      document.getElementById("text").innerHTML += msg.charAt(charIndex);
-      charIndex++;
-      setTimeout(typeText,40);
-    }else{
-      document.getElementById("text").innerHTML += "<br><br>";
-      msgIndex++;
-      charIndex = 0;
-      setTimeout(typeText,600);
-    }
-  }
+if(msgIndex < messages.length){
+let msg = messages[msgIndex];
+if(charIndex < msg.length){
+document.getElementById("text").innerHTML += msg.charAt(charIndex);
+charIndex++;
+setTimeout(typeText,40);
+}else{
+document.getElementById("text").innerHTML += "<br><br>";
+msgIndex++;
+charIndex = 0;
+setTimeout(typeText,600);
+}
+}
 }
 
-// SLIDING IMAGE ANIMATION
+// IMAGE ANIMATION
 function showImages(){
-  let imgs = document.querySelectorAll(".gallery img");
-  imgs.forEach((img,i)=>{
-    setTimeout(()=>{
-      img.style.opacity="1";
-      img.style.transform="translateY(0) scale(1)";
-    }, i*700);
-  });
+let imgs=document.querySelectorAll(".gallery img");
+imgs.forEach((img,index)=>{
+setTimeout(()=>{
+img.style.opacity="1";
+img.style.transform="translateY(0) scale(1)";
+}, index*700);
+});
 }
 
-// FLOATING HEARTS
+// HEARTS
 function hearts(){
-  setInterval(()=>{
-    let h=document.createElement("div");
-    h.className="heart";
-    h.innerHTML="💖";
-    h.style.left=Math.random()*100+"vw";
-    h.style.fontSize=(12+Math.random()*24)+"px";
-    document.body.appendChild(h);
-    setTimeout(()=>h.remove(),4000);
-  },300);
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="💖";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),4000);
+},300);
 }
 </script>
+
 </body>
 </html>
