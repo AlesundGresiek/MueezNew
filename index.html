@@ -71,24 +71,24 @@ margin:15px;
 line-height:1.5;
 }
 
-/* MOBILE GALLERY */
+/* SLIDESHOW */
 .gallery{
-display:flex;
-gap:10px;
-padding:10px;
-overflow-x:auto;
-scroll-snap-type:x mandatory;
+position:relative;
+width:80%;
+max-width:400px;
+height:250px;
+margin:20px auto;
+overflow:hidden;
+border-radius:15px;
 }
 
 .gallery img{
-flex:0 0 80%;
-height:200px;
+position:absolute;
+width:100%;
+height:100%;
 object-fit:cover;
-border-radius:15px;
 opacity:0;
-transform:translateY(40px) scale(0.9);
-transition:all 0.8s ease;
-scroll-snap-align:center;
+transition: opacity 1s ease;
 }
 
 /* Hearts */
@@ -152,7 +152,7 @@ function yesClick(){
 document.getElementById("loveSection").style.display="none";
 document.getElementById("main").style.display="block";
 typeText();
-showImages();
+startSlideshow();
 hearts();
 }
 
@@ -169,7 +169,7 @@ let messages = [
 "💖 You are my world, my heart, my everything...",
 "🌸 I can't wait to spend forever with you...",
 "✨ Eid Mubarak, my love!",
-"💍 Will you marry me? 💖"
+"I Love You So Much 💖"
 ];
 
 let msgIndex = 0;
@@ -191,15 +191,17 @@ setTimeout(typeText,600);
 }
 }
 
-// IMAGE ANIMATION
-function showImages(){
+// SLIDESHOW
+function startSlideshow(){
 let imgs=document.querySelectorAll(".gallery img");
-imgs.forEach((img,index)=>{
-setTimeout(()=>{
-img.style.opacity="1";
-img.style.transform="translateY(0) scale(1)";
-}, index*700);
-});
+let index = 0;
+imgs[index].style.opacity = 1;
+
+setInterval(()=>{
+imgs[index].style.opacity = 0;
+index = (index+1) % imgs.length;
+imgs[index].style.opacity = 1;
+}, 3000); // change image every 3 seconds
 }
 
 // HEARTS
