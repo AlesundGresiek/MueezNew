@@ -71,7 +71,7 @@ margin:15px;
 line-height:1.5;
 }
 
-/* VERTICAL SLIDESHOW */
+/* SLIDING SLIDESHOW */
 .gallery{
 position:relative;
 width:80%;
@@ -84,14 +84,14 @@ border-radius:15px;
 
 .gallery-track{
 display:flex;
-flex-direction:column;
+width:100%;
 height:100%;
 transition:transform 1s ease-in-out;
 }
 
 .gallery-track img{
 flex:0 0 100%;
-width:100%;
+height:100%;
 object-fit:cover;
 }
 
@@ -142,15 +142,15 @@ animation:float 4s linear infinite;
 </div>
 
 <script>
-// PASSWORD (case-insensitive & trim)
+// PASSWORD
 function check(){
-  let p = document.getElementById("pass").value.trim().toLowerCase();
-  if(p === "areeba"){
-    document.getElementById("lock").style.display="none";
-    document.getElementById("loveSection").style.display="block";
-  } else {
-    alert("Wrong password");
-  }
+let p=document.getElementById("pass").value;
+if(p==="areeba"){
+document.getElementById("lock").style.display="none";
+document.getElementById("loveSection").style.display="block";
+}else{
+alert("Wrong password");
+}
 }
 
 // YES CLICK
@@ -197,7 +197,7 @@ setTimeout(typeText,600);
 }
 }
 
-// VERTICAL SLIDESHOW
+// SLIDING SLIDESHOW
 function startSlideshow(){
 const track = document.querySelector(".gallery-track");
 const slides = document.querySelectorAll(".gallery-track img");
@@ -205,7 +205,7 @@ let index = 0;
 
 setInterval(()=>{
 index = (index + 1) % slides.length;
-track.style.transform = `translateY(-${index * 100}%)`;
+track.style.transform = `translateX(-${index * 100}%)`;
 }, 3000);
 }
 
